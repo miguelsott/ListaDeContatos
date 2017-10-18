@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">@string/movies_road</string>
-    <string name="series_movies_and_news">Séries, filmes e novidades</string>
     <string name="username">Nome de usuário</string>
     <string name="password">Senha</string>
     <string name="sign_in">Entrar</string>
