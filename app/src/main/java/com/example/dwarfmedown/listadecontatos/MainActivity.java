@@ -6,7 +6,6 @@ import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        Intent abirLoginActivity = new Intent(MainActivity.this, Login.class);
-        startActivity(abirLoginActivity);
+        Intent abrirAgendaActivity = new Intent(MainActivity.this, Agenda.class);
+        startActivity(abrirAgendaActivity);
 
     }
 
