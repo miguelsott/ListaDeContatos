@@ -1,4 +1,4 @@
-package com.example.dwarfmedown.listadecontatos;
+package com.example.dwarfmedown.listadecontatos.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,17 +7,22 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 
+import com.example.dwarfmedown.listadecontatos.agenda.AgendaActivity;
+import com.example.dwarfmedown.listadecontatos.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnTextChanged;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @BindView(R.id.text_input_layout_username) TextInputLayout usernameTextInputLayout;
     @BindView(R.id.edit_text_username) TextInputEditText usernameEditText;
     @BindView(R.id.text_input_layout_password) TextInputLayout passwordTextInputLayout;
     @BindView(R.id.edit_text_password) TextInputEditText passwordEditText;
+
+    LoginPresenter loginPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        loginPresenter = new LoginPresenter(LoginActivity.this);
     }
 
     @OnTextChanged(R.id.edit_text_username)
@@ -43,21 +49,26 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button_login)
     public void doLogin(){
-        if (TextUtils.isEmpty(usernameEditText.getText().toString())) {
-            usernameTextInputLayout.setErrorEnabled(true);
-            usernameTextInputLayout.setError(getString(R.string.invalid_username));
-            return;
-        }
 
-        if (TextUtils.isEmpty(passwordEditText.getText().toString())) {
-            passwordTextInputLayout.setErrorEnabled(true);
-            passwordTextInputLayout.setError(getString(R.string.invalid_password));
-            return;
-        }
+        loginPresenter.login(
+                usernameEditText.getText().toString(),
+                passwordEditText.getText().toString());
 
-        Intent openAgendaActivity = new Intent(MainActivity.this, AgendaActivity.class);
+    }
+
+    public void setUserError(){
+        usernameTextInputLayout.setErrorEnabled(true);
+        usernameTextInputLayout.setError(getString(R.string.invalid_username));
+    }
+
+    public void setPassError(){
+        passwordTextInputLayout.setErrorEnabled(true);
+        passwordTextInputLayout.setError(getString(R.string.invalid_password));
+    }
+
+    public void loginSuccessful(){
+        Intent openAgendaActivity = new Intent(LoginActivity.this, AgendaActivity.class);
         startActivity(openAgendaActivity);
-
     }
 
 }
