@@ -28,21 +28,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnTextChanged(R.id.edit_text_username)
-    public void validaUsuario(){
+    public void validateUser(){
         usernameTextInputLayout.setErrorEnabled(false);
         usernameTextInputLayout.setError("");
 
     }
 
     @OnTextChanged(R.id.edit_text_password)
-    public void validaSenha(){
+    public void validatePassword(){
         passwordTextInputLayout.setErrorEnabled(false);
         passwordTextInputLayout.setError("");
 
     }
 
     @OnClick(R.id.button_login)
-    public void fazLogin(){
+    public void doLogin(){
         if (TextUtils.isEmpty(usernameEditText.getText().toString())) {
             usernameTextInputLayout.setErrorEnabled(true);
             usernameTextInputLayout.setError(getString(R.string.invalid_username));
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        Intent abrirAgendaActivity = new Intent(MainActivity.this, Agenda.class);
-        startActivity(abrirAgendaActivity);
+        Intent openAgendaActivity = new Intent(MainActivity.this, AgendaActivity.class);
+        startActivity(openAgendaActivity);
 
     }
 

@@ -3,7 +3,7 @@ package com.example.dwarfmedown.listadecontatos;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Agenda extends AppCompatActivity {
+public class AgendaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
