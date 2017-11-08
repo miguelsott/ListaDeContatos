@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 
 import com.example.dwarfmedown.listadecontatos.agenda.AgendaActivity;
 import com.example.dwarfmedown.listadecontatos.R;
@@ -27,7 +26,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_agenda);
         ButterKnife.bind(this);
 
         loginPresenter = new LoginPresenter(LoginActivity.this);
