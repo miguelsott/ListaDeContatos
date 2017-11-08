@@ -16,10 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.dwarfmedown.listadecontatos.agenda.AgendaActivity">
+        <activity android:name=".agenda.AgendaActivity">
             android:name=".Login"
             android:theme="@style/AppTheme">
         </activity>
+        <activity android:name=".add_contact.AddContactActivity"></activity>
     </application>
 
 </manifest>

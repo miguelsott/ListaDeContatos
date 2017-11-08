@@ -5,17 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
-    tools:context="com.example.dwarfmedown.listadecontatos.agenda.AgendaActivity">
-    <ListView
+    tools:context="com.example.dwarfmedown.listadecontatos.add_contact.AddContactActivity">
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="9"
-        android:id="@+id/lst_contact"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_contact_name"
+        android:hint="Contact"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/btn_add_contact"
-        android:text="Add Contact"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_contact_added"
+        android:text="OK"/>
 </LinearLayout>
